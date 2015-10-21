@@ -4,5 +4,6 @@
 docs/api
 example/*.js
 node_modules
+node_modules/*
 test/build
 test/coverage
