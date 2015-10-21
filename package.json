@@ -43,7 +43,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dwillmer/phosphide-menu.git"
+    "url": "https://github.com/phosphorjs/phosphide-menus.git"
   },
   "files": [
     "lib/index.js",
@@ -59,7 +59,7 @@
   "author": "Dave Willmer <dave.willmer@gmail.com>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/dwillmer/phosphide-menu/issues"
+    "url": "https://github.com/phosphorjs/phosphide-menus/issues"
   },
-  "homepage": "https://github.com/dwillmer/phosphide-menu"
+  "homepage": "https://github.com/phosphorjs/phosphide-menus"
 }
