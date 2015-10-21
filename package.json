@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "dependencies": {
-    "phosphide": "git+https://github.com/phosphorjs/phosphide.git",
+    "phosphide": "git+https://github.com/dwillmer/phosphide.git",
     "phosphor-disposable": "^1.0.4",
     "phosphor-menus": "^0.9.5",
     "phosphor-topsort": "^0.9.1",

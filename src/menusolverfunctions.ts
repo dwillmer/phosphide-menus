@@ -141,6 +141,29 @@ var difference = function(first: string[], second: string[]): string[] {
 }
 
 /**
+ * Given an object containing declarative constraints, such as:
+ * {
+ *   before: ['Edit', 'Help'],
+ *   after: ['File']
+ * }
+ * this will return the set of graph edges corresponding to those constraints.
+ */ 
+var formatConstraints = function(constraints: any, against: string): [string, string][] {
+  var result: [string, string][] = [];
+  if (constraints.before) {
+    for (var i = 0; i < constraints.before.length; ++i) {
+      result.push([against, constraints.before[i]]);
+    }
+  }
+  if (constraints.after) {
+    for (var j = 0; j < constraints.after.length; ++j) {
+      result.push([constraints.after[j], against])
+    }
+  }
+  return result;
+}
+
+/**
  * Returns the constraints for all items at a given level in the 
  * tree. 
  *
@@ -156,8 +179,9 @@ var getConstraintsAtLevel = function(item: string[], level: number): [string, st
   if (menuItem.constraints === undefined) { return constraints; }
   var cons = menuItem.constraints[levelText];
   if (cons) {
-    for (var c = 0; c < cons.length; ++c) {
-      constraints.push(cons[c].constrain(levelText));
+    var formatted = formatConstraints(cons, levelText);
+    for (var c = 0; c < formatted.length; ++c) {
+      constraints.push(formatted[c]);
     }
   }
   return constraints;
